@@ -1,18 +1,20 @@
 # Brain-Tumor-Segmentation
-Arch Technologies Project
-This project presents a hybrid deep learning approach for brain tumor detection and segmentation using two state-of-the-art models: YOLOv11 and SAM2 (Segment Anything Model 2). The system is designed to automatically identify and isolate brain tumors in medical images by combining real-time object detection with high-precision image segmentation.
-YOLOv11 is used to detect the presence and approximate location of tumors through bounding boxes.
+## Arch Technologies Project
 
-SAM2 is then applied to generate detailed pixel-level masks for the detected tumor regions.
+This project focuses on the implementation of a deep learning-based solution for automated brain tumor detection and segmentation using a two-stage pipeline that combines the strengths of YOLOv11 (You Only Look Once) for object detection and SAM2 (Segment Anything Model 2) for semantic segmentation. The goal of the project is to accurately detect tumor regions in medical images and generate precise, pixel-level segmentations that can support radiologists and researchers in neuro-oncology. Early and accurate tumor detection is critical in clinical practice, and this project explores how modern AI tools can assist in medical diagnostics with speed, precision, and reproducibility.
 
-The solution is implemented and executed entirely in Google Colab and uses a public brain tumor dataset from Kaggle. The project demonstrates how advanced models can be combined effectively to support medical diagnostics, specifically in neuro-oncology.
+🔍 Key Features
 
-Key components of the project include:
+- YOLOv11 is leveraged for its real-time object detection capability, allowing the model to identify tumor locations within MRI scans via bounding boxes. YOLOv11 is known for its high speed and accuracy, making it suitable for medical imaging workflows that require both performance and precision.-
 
-Preparing and training YOLOv11 on annotated brain tumor images.
+- SAM2, developed by Meta AI, is used to perform instance segmentation by generating detailed masks around the tumor regions identified by YOLO. SAM2 enables the model to go beyond coarse detection and accurately delineate the boundaries of the tumor.
 
-Integrating SAM2 with YOLO’s output to generate segmentation masks.
+- The project was developed entirely in Google Colab to ensure ease of access and reproducibility. It also integrates PyTorch, OpenCV, and Matplotlib for model training, image processing, and result visualization.
 
-Visualizing and saving the results of detection and segmentation for further analysis.
+- A Kaggle-sourced dataset containing labeled brain tumor images was used for training and validation. The dataset was formatted to meet the requirements of YOLO, with annotations provided in standard YOLO format.
 
-This project reflects a meaningful step toward AI-assisted medical imaging and provides a scalable pipeline for tumor analysis in CT or MRI scans.
+- The final pipeline is capable of taking unseen MRI brain scan images and outputting both:
+
+1. Tumor classification and bounding box detection.
+
+2. High-resolution segmentation masks that isolate the tumor area from surrounding tissue.
